@@ -1,0 +1,51 @@
+
+
+<section>
+    <div class="container my-5">
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-sm mb-4" href="/create"> Add new product</a>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Photo</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% products.forEach((item, index) => { %>
+                                        <tr>
+                                            <td><%= index + 1 %></td>
+                                            <td>
+                                                <img style="width: 45px !important; height: 60px; object-fit: cover;" src="/products/<%= item.productPhoto %>" alt="">
+                                            </td>
+                                            <td><%= item.name %></td>
+                                            <td><%= item.reglurPrice %></td>
+                                            <td><%= item.sellPrice %></td>
+                                            <td>
+                                                <a class="btn btn-sm btn-info" href="/single/<%= item.slug %>"><i class="fa-light fa-eye"></i></a>
+                                                <a class="btn btn-sm btn-warning" href="/single-edit/<%= item.id %>"><i class="fa-light fa-edit"></i></a>
+                                                <a class="btn btn-sm btn-danger" href="/single-delete/<%= item.id %>"><i class="fa-light fa-trash"></i></a>
+                                            </td>
+                                        </tr>                                     
+                                    <% }) %>
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
