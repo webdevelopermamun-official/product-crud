@@ -1,7 +1,5 @@
 # Ignore Node.js build artifacts and logs
 node_modules/
-npm-debug.log
-yarn-error.log
 
 
 
